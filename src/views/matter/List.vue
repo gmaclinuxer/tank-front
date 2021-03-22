@@ -334,9 +334,9 @@
               }
 
               //判断文件大小。
-              if (that.user.sizeLimit >= 0) {
-                  if (domFile.size > that.user.sizeLimit) {
-                      that.$message.error(that.$t('matter.sizeExceedLimit', humanFileSize(domFile.size), humanFileSize(that.user.sizeLimit)))
+              if (that.user.size_limit >= 0) {
+                  if (domFile.size > that.user.size_limit) {
+                      that.$message.error(that.$t('matter.sizeExceedLimit', humanFileSize(domFile.size), humanFileSize(that.user.size_limit)))
                       continue
                   }
               }

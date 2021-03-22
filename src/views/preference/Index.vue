@@ -60,8 +60,8 @@
           <span>{{$t('preference.userDefaultSizeLimit')}}: </span>
           <span>
             <span class="mr10">
-                    <span v-if="preference.defaultTotalSizeLimit >= 0">
-                            {{preference.defaultTotalSizeLimit | humanFileSize}}
+                    <span v-if="preference.defaulttotal_size_limit >= 0">
+                            {{preference.defaulttotal_size_limit | humanFileSize}}
                           </span>
                     <span v-else>
                             {{$t('preference.noLimit')}}

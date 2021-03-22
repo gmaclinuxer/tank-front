@@ -4,25 +4,24 @@
 
     <div>
       <SideNavigation/>
-      <div id="page-wrapper" ref="pageWrapper" :class="{'show-drawer':$store.state.config.showDrawer}" @click="blankClick">
+      <div id="page-wrapper" ref="pageWrapper" :class="{'show-drawer':globalConfig.showDrawer}" @click="blankClick">
         <DragObscure v-show="dragEnterCount > 0"/>
         <div>
 
-          <div class="mb10">
+          <div class="breadcrumb-wrapper">
 
-            <router-link to="/" v-if="$store.state.breadcrumbs && $store.state.breadcrumbs.length">
+            <router-link to="/" v-if="breadcrumbs && breadcrumbs.length" class="breadcrumb-item">
               <i class="fa fa-home f16"></i>
             </router-link>
 
-            <span v-for="b in $store.state.breadcrumbs">
-              <span>/</span>
-							<router-link v-if="(b.name || b.path) && b.name !== $store.state.route.name" :to="b">
+            <span v-for="b in breadcrumbs" class="breadcrumb-item">
+              <span class="separator">/</span>
+							<router-link v-if="(b.name || b.path) && b.name !== route.name" :to="b">
                 {{b.displayDirect?b.title:$t(b.title)}}
               </router-link>
 							<span v-else>
 								{{b.displayDirect?b.title:$t(b.title)}}
 							</span>
-
             </span>
 
           </div>
@@ -48,7 +47,8 @@
   import TopNavigation from './layout/TopNavigation.vue'
   import BottomNavigation from './layout/BottomNavigation.vue'
   import DragObscure from './layout/DragObscure';
-  import enquire from 'enquire.js/dist/enquire'
+  import enquire from 'enquire.js/dist/enquire';
+  import { mapState } from 'vuex';
 
   export default {
     data() {
@@ -58,6 +58,11 @@
       }
     },
     computed: {
+      ...mapState({
+        route: state => state.route,
+        breadcrumbs: state => state.breadcrumbs,
+        globalConfig: state => state.config,
+      }),
       config() {
         return this.$store.state.config
       }
@@ -168,6 +173,17 @@
       @media (max-width: @screen-xs-max) {
         left: 0;
         bottom: 0;
+      }
+    }
+
+    .breadcrumb-wrapper {
+      background: #fafafa;
+      padding: 15px;
+      margin-bottom: 15px;
+
+      .breadcrumb-item span.separator {
+        margin: 0 5px;
+        font-size: 14px;
       }
     }
   }

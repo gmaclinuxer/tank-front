@@ -46,8 +46,8 @@
               <div class="mv5">
                 <span class="mr10">
                   {{$t('user.singleFileSizeLimit')}}:
-                    <span v-if="userItem.sizeLimit >= 0">
-                            {{userItem.sizeLimit | humanFileSize}}
+                    <span v-if="userItem.size_limit >= 0">
+                            {{userItem.size_limit | humanFileSize}}
                           </span>
                     <span v-else>
                             {{$t('user.noLimit')}}
@@ -55,8 +55,8 @@
                 </span>
                 <span class="mr10">
                   {{$t('user.totalFileSizeLimit')}}:
-                    <span v-if="userItem.totalSizeLimit >= 0">
-                            {{userItem.totalSizeLimit | humanFileSize}}
+                    <span v-if="userItem.total_size_limit >= 0">
+                            {{userItem.total_size_limit | humanFileSize}}
                           </span>
                     <span v-else>
                             {{$t('user.noLimit')}}
@@ -65,14 +65,14 @@
                 <span class="mr10">
                   {{$t('user.totalFileSize')}}:
                     <span>
-                            {{userItem.totalSize | humanFileSize}}
+                            {{userItem.total_size | humanFileSize}}
                           </span>
                 </span>
 
               </div>
               <div class="mv5">
-                <span class="mr10">{{$t('user.lastLoginTime')}}: {{userItem.lastTime | humanTime}}</span>
-                <span class="mr10">{{$t('user.lastLoginIp')}}: {{userItem.lastIp}}</span>
+                <span class="mr10">{{$t('user.lastLoginTime')}}: {{userItem.last_time | humanTime}}</span>
+                <span class="mr10">{{$t('user.lastLoginIp')}}: {{userItem.last_ip}}</span>
 
                 <span class="pull-right action-buttons">
 

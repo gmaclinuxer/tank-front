@@ -15,7 +15,7 @@ export default class User extends BaseEntity {
 
   static LOCAL_STORAGE_KEY = "user";
 
-  static URL_LOGIN = '/api/user/login'
+  static URL_LOGIN = '/api/user/login/'
   static URL_AUTHENTICATION_LOGIN = '/api/user/authentication/login'
   static URL_REGISTER = '/api/user/register'
   static URL_LOGOUT = '/api/user/logout'
@@ -29,13 +29,13 @@ export default class User extends BaseEntity {
     this.role = UserRole.GUEST
     this.username = null
     this.password = null
-    this.avatarUrl = null
-    this.lastIp = null
-    this.lastTime = null
+    this.avatar_url = null
+    this.last_ip = null
+    this.last_time = null
     //默认大小限制100Mb.
-    this.sizeLimit = 104857600
-    this.totalSize = 0
-    this.totalSizeLimit = -1
+    this.size_limit = 104857600
+    this.total_size = 0
+    this.total_size_limit = -1
     this.status = UserStatus.OK
 
     //local fields
@@ -56,8 +56,8 @@ export default class User extends BaseEntity {
   }
 
   getAvatarUrl() {
-    if (this.avatarUrl) {
-      return handleImageUrl(this.avatarUrl)
+    if (this.avatar_url) {
+      return handleImageUrl(this.avatar_url)
     } else {
       return defaultAvatarPath
     }
@@ -69,7 +69,7 @@ export default class User extends BaseEntity {
 
   render(obj) {
     super.render(obj)
-    this.renderEntity('lastTime', Date)
+    this.renderEntity('last_time', Date)
   }
 
   getFilters() {
@@ -84,7 +84,6 @@ export default class User extends BaseEntity {
 
   //将用户信息存储在本地。
   renderFromLocalStorage() {
-
     try {
       let userString = readLocalStorage(User.LOCAL_STORAGE_KEY)
 
@@ -138,9 +137,9 @@ export default class User extends BaseEntity {
       username: this.username,
       password: this.password,
       role: this.role,
-      avatarUrl: this.avatarUrl,
-      sizeLimit: this.sizeLimit,
-      totalSizeLimit: this.totalSizeLimit,
+      avatar_url: this.avatar_url,
+      size_limit: this.size_limit,
+      total_size_limit: this.total_size_limit,
       uuid: this.uuid ? this.uuid : null
     }
 
@@ -188,11 +187,12 @@ export default class User extends BaseEntity {
   innerLogin(response) {
     let that = this
     this.errorMessage = null
-    this.render(response.data.data)
+    console.log(response.data);
+    this.render(response.data.user)
     this.isLogin = true
 
     //登录成功后去本地保存一下用户的简单信息，方便下次自动填入个别字段。
-    this.saveToLocalStorage(response.data.data)
+    this.saveToLocalStorage(response.data.user)
 
   }
 

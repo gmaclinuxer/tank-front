@@ -23,7 +23,7 @@ export default class Preference extends BaseEntity {
     //文件数量
     this.downloadDirMaxNum = -1
     //用户默认总大小限制
-    this.defaultTotalSizeLimit = -1
+    this.defaulttotal_size_limit = -1
     //是否允许自主注册
     this.allowRegister = false
     //后台版本
@@ -54,7 +54,7 @@ export default class Preference extends BaseEntity {
       record: this.record,
       downloadDirMaxNum: this.downloadDirMaxNum,
       downloadDirMaxSize: this.downloadDirMaxSize,
-      defaultTotalSizeLimit: this.defaultTotalSizeLimit,
+      defaulttotal_size_limit: this.defaulttotal_size_limit,
       allowRegister: this.allowRegister
     }
   }

@@ -6,7 +6,8 @@ module.exports = {
     proxy: {
       '/api': {
         //target: 'https://tank.eyeblue.cn',
-        target: 'http://127.0.0.1:6010',
+        target: 'http://127.0.0.1:8000',
+        // target: 'http://127.0.0.1:6010',
         changeOrigin: true,
         pathRewrite: {
           '^/api': '/api'

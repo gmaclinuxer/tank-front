@@ -6,7 +6,7 @@
 
         <router-link to="/">
           <img class="logo" :src="logoUrl"/>
-          <span class="title">{{preference.name?preference.name: $t('eyeblueTank') }}</span>
+          <span class="title">{{preference.name?preference.name: $t('YunDisk') }}</span>
         </router-link>
 
       </div>

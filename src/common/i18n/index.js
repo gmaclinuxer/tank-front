@@ -1,7 +1,7 @@
 // 准备翻译的语言环境信息
 let i18nMessage = {
   en: {
-    eyeblueTank: "EyeblueTank",
+    eyeblueTank: "ZhiYiDisk",
     dashboard: {
       totalInvokeNum: 'Total PV',
       weekRate: 'Week',
@@ -279,7 +279,7 @@ let i18nMessage = {
     all: "All",
   },
   zh: {
-    eyeblueTank: "蓝眼云盘",
+    eyeblueTank: "挚一云盘",
     dashboard: {
       totalInvokeNum: '总PV',
       weekRate: '周环比',

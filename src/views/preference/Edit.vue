@@ -75,12 +75,12 @@
         <div class="col-md-10">
           <div class="row">
             <div class="col-xs-6">
-              <input type="number" class="form-control" v-model="preference.defaultTotalSizeLimit">
+              <input type="number" class="form-control" v-model="preference.defaulttotal_size_limit">
             </div>
             <div class="col-xs-6" style="line-height:30px;">
               {{$t('preference.current')}}:
-              <span v-if="preference.defaultTotalSizeLimit < 0">{{$t('preference.noLimit')}}</span>
-              <span v-else>{{preference.defaultTotalSizeLimit | humanFileSize}}</span>
+              <span v-if="preference.defaulttotal_size_limit < 0">{{$t('preference.noLimit')}}</span>
+              <span v-else>{{preference.defaulttotal_size_limit | humanFileSize}}</span>
             </div>
           </div>
 

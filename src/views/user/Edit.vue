@@ -7,7 +7,7 @@
           <label class="col-md-2 control-label mt5">{{$t('user.avatar')}}</label>
           <div class="col-md-10">
             <div>
-              <MatterImage v-model="currentUser.avatarUrl" uploadHint=""/>
+              <MatterImage v-model="currentUser.avatar_url" uploadHint=""/>
             </div>
           </div>
         </div>
@@ -55,12 +55,12 @@
               <div class="col-xs-6">
                 <input type="number" class="form-control"
                        :disabled="user.role !== UserRole.ADMINISTRATOR"
-                       v-model="currentUser.sizeLimit">
+                       v-model="currentUser.size_limit">
               </div>
               <div class="col-xs-6" style="line-height:30px;">
                 {{$t('user.current')}}:
-                <span v-if="currentUser.sizeLimit < 0">{{$t('user.noLimit')}}</span>
-                <span v-else>{{currentUser.sizeLimit | humanFileSize}}</span>
+                <span v-if="currentUser.size_limit < 0">{{$t('user.noLimit')}}</span>
+                <span v-else>{{currentUser.size_limit | humanFileSize}}</span>
               </div>
             </div>
           </div>
@@ -73,12 +73,12 @@
               <div class="col-xs-6">
                 <input type="number" class="form-control"
                        :disabled="user.role !== UserRole.ADMINISTRATOR"
-                       v-model="currentUser.totalSizeLimit">
+                       v-model="currentUser.total_size_limit">
               </div>
               <div class="col-xs-6" style="line-height:30px;">
                 {{$t('user.current')}}:
-                <span v-if="currentUser.totalSizeLimit < 0">{{$t('user.noLimit')}}</span>
-                <span v-else>{{currentUser.totalSizeLimit | humanFileSize}}</span>
+                <span v-if="currentUser.total_size_limit < 0">{{$t('user.noLimit')}}</span>
+                <span v-else>{{currentUser.total_size_limit | humanFileSize}}</span>
               </div>
             </div>
           </div>

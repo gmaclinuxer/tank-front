@@ -27,8 +27,8 @@
 
               <div class="col-md-12 form-info">
                 <span>{{$t('user.singleFileSizeLimit')}}:</span>
-                <span v-if="currentUser.sizeLimit >= 0">
-                            {{currentUser.sizeLimit | humanFileSize}}
+                <span v-if="currentUser.size_limit >= 0">
+                            {{currentUser.size_limit | humanFileSize}}
                           </span>
                 <span v-else>
                             {{$t('user.noLimit')}}
@@ -36,8 +36,8 @@
               </div>
               <div class="col-md-12 form-info">
                 <span>{{$t('user.totalFileSizeLimit')}}:</span>
-                <span v-if="currentUser.totalSizeLimit >= 0">
-                            {{currentUser.totalSizeLimit | humanFileSize}}
+                <span v-if="currentUser.total_size_limit >= 0">
+                            {{currentUser.total_size_limit | humanFileSize}}
                           </span>
                 <span v-else>
                   {{$t('user.noLimit')}}
@@ -47,7 +47,7 @@
               <div class="col-md-12 form-info">
                 <span>{{$t('user.totalFileSize')}}:</span>
                 <span>
-                 {{currentUser.totalSize | humanFileSize}}
+                 {{currentUser.total_size | humanFileSize}}
                 </span>
               </div>
 
@@ -62,7 +62,7 @@
               <div class="col-md-12 form-info">
                 <span>{{$t('user.lastLoginIp')}}:</span>
                 <span>
-                     {{currentUser.lastIp}}
+                     {{currentUser.last_ip}}
                     </span>
               </div>
 
@@ -70,7 +70,7 @@
               <div class="col-md-12 form-info">
                 <span>{{$t('user.lastLoginTime')}}:</span>
                 <span>
-                     {{currentUser.lastTime | simpleDateTime}}
+                     {{currentUser.last_time | simpleDateTime}}
                     </span>
               </div>
 
